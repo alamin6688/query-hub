@@ -4,7 +4,6 @@ import useAuth from "../../Hooks/useAuth";
 import SocialLogin from "../../Components/SocialLogin";
 import logo from "../../assets/logo.svg";
 import toast from "react-hot-toast";
-// import axios from "axios";
 
 const Login = () => {
   const { signIn } = useAuth();
@@ -23,12 +22,12 @@ const Login = () => {
       const result = await signIn(email, pass);
       console.log(result);
       // Get JWT Token And Set It As Cookie
-      //   const { data } = await axios.post(
-      //     `${import.meta.env.VITE_API_URL}/jwt`,
-      //     { email: result?.user?.email },
-      //     { withCredentials: true }
-      //   );
-      //   console.log(data);
+      // const { data } = await axios.post(
+      //   `${import.meta.env.VITE_API_URL}/jwt`,
+      //   { email: result?.user?.email },
+      //   { withCredentials: true }
+      // );
+      // console.log(data);
 
       // Navigate To The Intended Route
       navigate(from, { replace: true });
@@ -44,8 +43,8 @@ const Login = () => {
       <Helmet>
         <title>Query Hub | Login</title>
       </Helmet>
-      <div className="flex justify-center items-center min-h-[calc(100vh-286px)] p-2 md:px-0">
-        <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-xl shadow-2xl lg:max-w-4xl">
+      <div className="flex justify-center items-center min-h-[calc(100vh-186px)] p-2 md:px-0">
+        <div className="flex w-full max-w-sm mx-auto overflow-hidden rounded-xl shadow-2xl lg:max-w-4xl bg-white">
           <div
             className="hidden bg-cover bg-center lg:block lg:w-1/2"
             style={{
@@ -67,9 +66,9 @@ const Login = () => {
             </div>
 
             <div className="flex items-center justify-between mt-4">
-              <span className="w-1/5 border-b  lg:w-1/4"></span>
+              <span className="w-1/5 border-b lg:w-1/4"></span>
 
-              <div className="text-xs text-center text-gray-700 uppercase  hover:underline">
+              <div className="text-xs text-center text-gray-700 uppercase hover:underline">
                 or login with email
               </div>
 
@@ -78,7 +77,7 @@ const Login = () => {
             <form onSubmit={handleLogin}>
               <div className="mt-4">
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-600 "
+                  className="block mb-2 text-sm font-medium text-gray-600"
                   htmlFor="LoggingEmailAddress"
                 >
                   Email Address
@@ -87,7 +86,7 @@ const Login = () => {
                   id="LoggingEmailAddress"
                   autoComplete="email"
                   name="email"
-                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                   type="email"
                 />
               </div>
@@ -95,7 +94,7 @@ const Login = () => {
               <div className="mt-4">
                 <div className="flex justify-between">
                   <label
-                    className="block mb-2 text-sm font-medium text-gray-600 "
+                    className="block mb-2 text-sm font-medium text-gray-600"
                     htmlFor="loggingPassword"
                   >
                     Password
@@ -106,7 +105,7 @@ const Login = () => {
                   id="loggingPassword"
                   autoComplete="current-password"
                   name="password"
-                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                   type="password"
                 />
               </div>
@@ -121,16 +120,16 @@ const Login = () => {
             </form>
 
             <div className="flex items-center justify-between mt-4">
-              <span className="w-1/5 border-b  md:w-1/4"></span>
+              <span className="w-1/5 border-b md:w-1/4"></span>
 
               <Link
                 to="/register"
-                className="text-xs font-bold text-gray-600 uppercase  hover:underline"
+                className="text-xs font-bold text-gray-600 uppercase hover:underline"
               >
                 or Register
               </Link>
 
-              <span className="w-1/5 border-b  md:w-1/4"></span>
+              <span className="w-1/5 border-b md:w-1/4"></span>
             </div>
           </div>
         </div>
