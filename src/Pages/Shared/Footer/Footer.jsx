@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../../assets/logo.svg";
 
 const Footer = () => {
   return (
@@ -140,13 +141,9 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between sm:flex-row">
           <div className="flex items-center gap-1">
             <a href="#">
-              <img
-                className="w-auto h-7"
-                src="../../../../public/logo.svg"
-                alt="Logo"
-              />
+              <img className="w-auto h-7" src={logo} alt="Logo" />
             </a>
-            <p className="text-white font-poppins text-xl">Query Hub</p>
+            <p className="text-white font-poppins text-[18px]">Query Hub</p>
           </div>
           <p className="mt-4 text-sm text-gray-500 sm:mt-0 dark:text-gray-300">
             © Copyright 2024. All Rights Reserved.
