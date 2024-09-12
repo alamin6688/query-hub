@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-gray-900">
-      <div className="container px-6 py-12 mx-auto">
+      <div className="max-w-screen-2xl px-6 py-12 mx-auto">
         <div className="md:flex md:-mx-3 md:items-center md:justify-between">
           <h1 className="text-xl font-semibold tracking-tight text-gray-800 md:mx-3 xl:text-2xl dark:text-white">
             Subscribe our newsletter to get update.
@@ -123,13 +123,13 @@ const Footer = () => {
                 href="#"
                 className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
               >
-                +880 768 473 4978
+                +880 123 456 7890
               </a>
               <a
                 href="#"
                 className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
               >
-                info@merakiui.com
+                info@company.com
               </a>
             </div>
           </div>
@@ -138,15 +138,18 @@ const Footer = () => {
         <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
 
         <div className="flex flex-col items-center justify-between sm:flex-row">
-          <a href="#">
-            <img
-              className="w-auto h-7"
-              src="https://merakiui.com/images/full-logo.svg"
-              alt=""
-            />
-          </a>
+          <div className="flex items-center gap-1">
+            <a href="#">
+              <img
+                className="w-auto h-7"
+                src="../../../../public/logo.svg"
+                alt="Logo"
+              />
+            </a>
+            <p className="text-white font-poppins text-xl">Query Hub</p>
+          </div>
           <p className="mt-4 text-sm text-gray-500 sm:mt-0 dark:text-gray-300">
-            © Copyright 2021. All Rights Reserved.
+            © Copyright 2024. All Rights Reserved.
           </p>
         </div>
       </div>
