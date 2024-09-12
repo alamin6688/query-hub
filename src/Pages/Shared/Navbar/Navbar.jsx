@@ -91,7 +91,8 @@ const Navbar = () => {
                 <input
                   onChange={handleToggle}
                   type="checkbox"
-                  checked={theme === "dark"} // Checkbox will reflect the current theme
+                  className="theme-controller"
+                  checked={theme === "dark"}
                 />
                 <svg
                   className={`swap-off h-10 w-10 fill-current ${
@@ -116,7 +117,7 @@ const Navbar = () => {
             {!user && (
               <div>
                 <Link
-                  to="/sign-in"
+                  to="/login"
                   className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white bg-gray-800 rounded-lg hover:bg-gray-700"
                 >
                   Login
@@ -145,18 +146,36 @@ const Navbar = () => {
                       />
                     </div>
                   </div>
-                  <ul className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1000] mt-3 w-44 p-2 space-y-1 shadow">
+                  <ul className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1000] mt-3 w-44 p-2 space-y-1 shadow font-semibold">
                     <li>
-                      <Link to="/profile" className="justify-between">
-                        Profile
-                        <span className="badge badge-secondary">New</span>
-                      </Link>
+                      <NavLink to="/queries" className="p-1 px-2">
+                        Queries
+                      </NavLink>
                     </li>
                     <li>
-                      <Link to="/settings">Settings</Link>
+                      <NavLink to="/recommendations" className="p-1 px-2">
+                        Recommendations For Me
+                      </NavLink>
                     </li>
                     <li>
-                      <button onClick={handleLogout}>Logout</button>
+                      <NavLink to="/my-queries" className="p-1 px-2">
+                        My Queries
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/my-recommendations" className="p-1 px-2">
+                        My recommendations
+                      </NavLink>
+                    </li>
+                    <li>
+                      {user && (
+                        <Link
+                          onClick={handleLogout}
+                          className="btn bg-red-500 hover:bg-red-600 text-white border-none hover:font-bold"
+                        >
+                          Logout
+                        </Link>
+                      )}
                     </li>
                   </ul>
                 </div>
