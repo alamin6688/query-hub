@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import HowItWorks from "../HowItWorks/HowItWorks";
 
 const Home = () => {
   return (
@@ -7,7 +8,7 @@ const Home = () => {
       <Helmet>
         <title>Query Hub | Home</title>
       </Helmet>
-      <div className="h-96">odrfugh</div>
+      <HowItWorks></HowItWorks>
     </>
   );
 };
