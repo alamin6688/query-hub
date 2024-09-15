@@ -29,10 +29,15 @@ const HowItWorks = () => {
   return (
     <div className="max-w-screen-2xl mx-auto my-8 pb-6 px-4">
       <div className="mx-auto text-center">
-        <h2 className="text-3xl font-extrabold text-center capitalize lg:text-3xl pt-4 pb-8">
+        <h2 className="text-2xl text-center font-extrabold lg:text-3xl text-gray-800 pt-4 font-poppins">
           How It Works
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <p className="w-full md:w-2/3 mx-auto mt-4 text-center text-gray-900 font-poppins text-[18px]">
+          Discover the simple steps to navigate our system with ease. From
+          adding queries to managing recommendations, get a clear overview of
+          each process involved.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-8 lg:mt-10">
           {steps.map((step, index) => (
             <div
               key={index}

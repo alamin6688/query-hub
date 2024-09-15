@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  const storedTheme = localStorage.getItem("theme") || "dark";
-  const [theme, setTheme] = useState(storedTheme);
 
   const handleLogout = () => {
     logOut()
@@ -27,25 +24,8 @@ const Navbar = () => {
     </>
   );
 
-  // Update the theme in localStorage and on the document
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-    document.querySelector("html").setAttribute("data-theme", theme);
-  }, [theme]);
-
-  // Handle theme toggle
-  const handleToggle = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
-
   return (
-    <section
-      className={`border-b-2 ${
-        theme === "light"
-          ? "bg-gray-200 text-gray-800"
-          : "dark:bg-gray-900 text-white"
-      }`}
-    >
+    <section className="border-b-2">
       <div className="z-50 relative max-w-screen-2xl mx-auto py-2">
         <div className="navbar px-4">
           <div className="navbar-start">
@@ -89,10 +69,10 @@ const Navbar = () => {
                 {navLinks}
               </ul>
             </div>
-            <div className="mt-1">
+            {/* <div className="mt-1">
               <label className="swap swap-rotate">
                 <input
-                  onChange={handleToggle}
+                  onChange={toggleTheme} // Call toggleTheme when clicked
                   type="checkbox"
                   className="theme-controller"
                   checked={theme === "dark"}
@@ -116,7 +96,7 @@ const Navbar = () => {
                   <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                 </svg>
               </label>
-            </div>
+            </div> */}
             {!user && (
               <div>
                 <Link
