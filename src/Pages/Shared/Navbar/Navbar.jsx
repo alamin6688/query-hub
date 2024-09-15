@@ -151,6 +151,11 @@ const Navbar = () => {
                   </div>
                   <ul className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1000] mt-3 w-44 p-2 space-y-1 shadow font-semibold">
                     <li>
+                      <NavLink to="/profile" className="p-1 px-2">
+                        My Profile
+                      </NavLink>
+                    </li>
+                    <li>
                       <NavLink to="/queries" className="p-1 px-2">
                         Queries
                       </NavLink>
