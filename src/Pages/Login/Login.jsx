@@ -31,7 +31,7 @@ const Login = () => {
 
       // Navigate To The Intended Route
       navigate(from, { replace: true });
-      toast.success("Login Successful.");
+      toast.success("Login Successful!");
     } catch (err) {
       console.log(err);
       toast.error(err?.message || "Login Failed!");
@@ -43,7 +43,7 @@ const Login = () => {
       <Helmet>
         <title>Query Hub | Login</title>
       </Helmet>
-      <div className="flex justify-center items-center min-h-[calc(100vh-186px)] p-2 md:px-0">
+      <div className="flex justify-center items-center min-h-[calc(100vh-186px)] p-2 md:px-0 animate__animated animate__zoomIn">
         <div className="flex w-full max-w-sm mx-auto overflow-hidden rounded-xl shadow-2xl lg:max-w-4xl bg-white">
           <div
             className="hidden bg-cover bg-center lg:block lg:w-1/2"

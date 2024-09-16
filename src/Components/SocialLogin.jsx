@@ -34,7 +34,7 @@ const SocialLogin = () => {
       // );
       // console.log("Token Data:", data);
 
-      toast.success("Login successful.");
+      toast.success("Login successful!");
 
       // 4. Navigate To The Intended Route After Successful Sign-In
       navigate(from, { replace: true });

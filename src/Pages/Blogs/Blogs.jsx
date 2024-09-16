@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async";
+
 const Blogs = () => {
   const blogPosts = [
     {
@@ -160,71 +162,78 @@ const Blogs = () => {
     },
   ];
   return (
-    <div className="min-h-[calc(100vh-585px)] max-w-screen-2xl mx-auto mt-4 mb-8 pb-6 px-4">
-      <div className="mx-auto text-center">
-        <h2 className="text-3xl font-extrabold text-center capitalize lg:text-3xl pt-4 pb-8">
-          Latest Blog Posts
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
-          {blogPosts.map((post, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-xl hover:shadow-lg duration-300 hover:scale-[1.05] transition-all flex flex-col"
-            >
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-64 object-cover rounded-lg mb-4"
-              />
-              <div className="flex flex-col flex-grow">
-                <h3 className="text-xl text-gray-800 font-bold mb-2">
-                  {post.title}
-                </h3>
-                <p className="text-gray-500 mb-4">{post.date}</p>
-                <p className="text-gray-600 mb-4">
-                  {post.description.slice(0, 150)}...
-                </p>
-              </div>
-              <div className="flex  items-center justify-between ">
-                {/* Author Details */}
-                <div className="flex items-center">
-                  <img
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    className="w-10 h-10 rounded-full mr-3"
-                  />
-                  <div>
-                    <p className="text-gray-800 font-semibold">
-                      {post.author.name}
-                    </p>
-                    <p className="text-gray-500 text-sm">{post.author.role}</p>
+    <>
+    <Helmet>
+      <title>Query Hub | Blogs</title>
+    </Helmet>
+      <div className="min-h-[calc(100vh-585px)] max-w-screen-2xl mx-auto mt-4 mb-8 pb-6 px-4">
+        <div className="mx-auto text-center">
+          <h2 className="text-3xl font-extrabold text-center capitalize lg:text-3xl pt-4 pb-8">
+            Latest Blog Posts
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
+            {blogPosts.map((post, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-xl hover:shadow-lg duration-300 hover:scale-[1.05] transition-all flex flex-col"
+              >
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-64 object-cover rounded-lg mb-4"
+                />
+                <div className="flex flex-col flex-grow">
+                  <h3 className="text-xl text-gray-800 font-bold mb-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-500 mb-4">{post.date}</p>
+                  <p className="text-gray-600 mb-4">
+                    {post.description.slice(0, 150)}...
+                  </p>
+                </div>
+                <div className="flex  items-center justify-between ">
+                  {/* Author Details */}
+                  <div className="flex items-center">
+                    <img
+                      src={post.author.avatar}
+                      alt={post.author.name}
+                      className="w-10 h-10 rounded-full mr-3"
+                    />
+                    <div>
+                      <p className="text-gray-800 font-semibold">
+                        {post.author.name}
+                      </p>
+                      <p className="text-gray-500 text-sm">
+                        {post.author.role}
+                      </p>
+                    </div>
+                  </div>
+                  {/* Button */}
+                  <div className="flex justify-end">
+                    <button
+                      type="button"
+                      className="flex justify-center gap-2 items-center shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-500 hover:text-white before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-600 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
+                    >
+                      Read More
+                      <svg
+                        className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
+                        viewBox="0 0 16 19"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                          className="fill-gray-800 group-hover:fill-gray-800"
+                        ></path>
+                      </svg>
+                    </button>
                   </div>
                 </div>
-                {/* Button */}
-                <div className="flex justify-end">
-                  <button
-                    type="button"
-                    className="flex justify-center gap-2 items-center shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-500 hover:text-white before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-600 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
-                  >
-                    Read More
-                    <svg
-                      className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
-                      viewBox="0 0 16 19"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                        className="fill-gray-800 group-hover:fill-gray-800"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
