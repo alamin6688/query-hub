@@ -24,7 +24,7 @@ const FAQ = () => {
         <div className="grid grid-cols-1 gap-8 mt-8 lg:mt-16 md:grid-cols-2 xl:grid-cols-3">
           {/* First Question */}
           <div>
-            <div className="inline-block p-3 bg-green-600 rounded-lg text-white">
+            <div className="inline-block p-3 bg-green-600 rounded-lg text-white mb-2">
               <FaCommentAlt className="w-6 h-6" />
             </div>
 
@@ -43,7 +43,7 @@ const FAQ = () => {
 
           {/* Second Question */}
           <div>
-            <div className="inline-block p-3 bg-blue-600 rounded-lg text-white">
+            <div className="inline-block p-3 bg-blue-600 rounded-lg text-white mb-2">
               <FaSearch className="w-6 h-6" />
             </div>
 
@@ -62,7 +62,7 @@ const FAQ = () => {
 
           {/* Third Question */}
           <div>
-            <div className="inline-block p-3 bg-yellow-600 rounded-lg text-white">
+            <div className="inline-block p-3 bg-yellow-600 rounded-lg text-white mb-2">
               <FaLightbulb className="w-6 h-6" />
             </div>
 
@@ -80,7 +80,7 @@ const FAQ = () => {
 
           {/* Fourth Question */}
           <div>
-            <div className="inline-block p-3 bg-orange-600 rounded-lg text-white">
+            <div className="inline-block p-3 bg-orange-600 rounded-lg text-white mb-2">
               <FaEdit className="w-6 h-6" />
             </div>
 
@@ -98,7 +98,7 @@ const FAQ = () => {
 
           {/* Fifth Question */}
           <div>
-            <div className="inline-block p-3 bg-red-600 rounded-lg text-white">
+            <div className="inline-block p-3 bg-red-600 rounded-lg text-white mb-2">
               <FaRegCreditCard className="w-6 h-6" />
             </div>
 
@@ -116,7 +116,7 @@ const FAQ = () => {
 
           {/* Sixth Question */}
           <div>
-            <div className="inline-block p-3 bg-gray-600 rounded-lg text-white">
+            <div className="inline-block p-3 bg-gray-600 rounded-lg text-white mb-2">
               <FaQuestionCircle className="w-6 h-6" />
             </div>
 
