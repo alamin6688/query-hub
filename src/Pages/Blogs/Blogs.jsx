@@ -35,7 +35,8 @@ const Blogs = () => {
       date: "July 30, 2024",
       description:
         "Explore a list of the top tools available for finding and providing product recommendations. Understand the factors that make a recommendation reliable and trustworthy.",
-      image: "/images/product-recommendations.jpg",
+      image:
+        "https://i.postimg.cc/KYRqL3Qh/eniko-kis-Ks-LPTs-Yaq-IQ-unsplash.jpg",
       author: {
         name: "Jacob Miller",
         role: "Marketer",
@@ -48,7 +49,7 @@ const Blogs = () => {
       date: "July 15, 2024",
       description:
         "Discover the best practices when comparing similar products and making informed decisions about your next purchase.",
-      image: "/images/comparing-products.jpg",
+      image: "https://i.postimg.cc/fyT0tmjx/clock-design-wallpaper.jpg",
       author: {
         name: "Jacob Miller",
         role: "Marketer",
@@ -61,7 +62,8 @@ const Blogs = () => {
       date: "June 28, 2024",
       description:
         "Learn the importance of reading product reviews and how they can provide valuable insights into the quality and usability of a product.",
-      image: "/images/product-reviews.jpg",
+      image:
+        "https://i.postimg.cc/wvb92NY5/view-3d-hands-showing-thumbs-up-gesture.jpg",
       author: {
         name: "Ava Johnson",
         role: "Content Strategist",
@@ -74,7 +76,8 @@ const Blogs = () => {
       date: "June 10, 2024",
       description:
         "Explore common mistakes buyers make when considering product alternatives and how to avoid them.",
-      image: "/images/alternative-mistakes.jpg",
+      image:
+        "https://i.postimg.cc/Fsr2zztN/anxiety-inducing-imagery-with-unease-angst-feelings.jpg",
       author: {
         name: "Ava Johnson",
         role: "Content Strategist",
@@ -163,19 +166,19 @@ const Blogs = () => {
   ];
   return (
     <>
-    <Helmet>
-      <title>Query Hub | Blogs</title>
-    </Helmet>
+      <Helmet>
+        <title>Query Hub | Blogs</title>
+      </Helmet>
       <div className="min-h-[calc(100vh-585px)] max-w-screen-2xl mx-auto mt-4 mb-8 pb-6 px-4">
         <div className="mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-center capitalize lg:text-3xl pt-4 pb-8">
             Latest Blog Posts
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12 animate__animated animate__zoomIn">
             {blogPosts.map((post, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-xl hover:shadow-lg duration-300 hover:scale-[1.05] transition-all flex flex-col"
+                className="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl duration-300 hover:scale-[1.05] transition-all flex flex-col"
               >
                 <img
                   src={post.image}
