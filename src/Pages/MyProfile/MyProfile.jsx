@@ -1,12 +1,16 @@
 import React from "react";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const MyProfile = () => {
   const { user } = useAuth();
 
   return (
-    <div>
-      <div class="flex min-h-[calc(100vh-538px)] relative items-center justify-center w-full">
+    <>
+      <Helmet>
+        <title>Query Hub | My Profile</title>
+      </Helmet>
+      <div class="flex min-h-[calc(100vh-538px)] relative items-center justify-center w-full animate__animated animate__zoomIn">
         <div class="rounded-xl overflow-hidden relative text-center p-4 group items-center flex flex-col max-w-sm hover:shadow-2xl transition-all duration-500 shadow-2xl w-full bg-base-100">
           <div class="text-gray-600 group-hover:scale-105 transition-all flex flex-col items-center justify-center">
             <h3 className="text-center font-semibold italic">Profile Info</h3>
@@ -46,7 +50,7 @@ const MyProfile = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

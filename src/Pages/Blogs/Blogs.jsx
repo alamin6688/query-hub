@@ -36,7 +36,7 @@ const Blogs = () => {
       description:
         "Explore a list of the top tools available for finding and providing product recommendations. Understand the factors that make a recommendation reliable and trustworthy.",
       image:
-        "https://i.postimg.cc/KYRqL3Qh/eniko-kis-Ks-LPTs-Yaq-IQ-unsplash.jpg",
+        "https://i.postimg.cc/0jk6dKGp/maintenance-tools-kit-icon-graphicon-digital-device-screen.jpg",
       author: {
         name: "Jacob Miller",
         role: "Marketer",
@@ -90,7 +90,7 @@ const Blogs = () => {
       date: "May 23, 2024",
       description:
         "Learn how considering alternatives can contribute to sustainable shopping and the reduction of waste.",
-      image: "/images/sustainable-shopping.jpg",
+      image: "https://i.postimg.cc/Zqcq5Mmc/smiling-man-with-shopping-bags.jpg",
       author: {
         name: "Olivia Brown",
         role: "Sustainability Expert",
@@ -103,7 +103,7 @@ const Blogs = () => {
       date: "May 5, 2024",
       description:
         "Join online communities to get real-time insights from people who have already purchased or reviewed a product you are interested in.",
-      image: "/images/online-communities.jpg",
+      image: "https://i.postimg.cc/FsybxhVs/customer-experience-creative-collage.jpg",
       author: {
         name: "Olivia Brown",
         role: "Sustainability Expert",
@@ -116,7 +116,7 @@ const Blogs = () => {
       date: "April 15, 2024",
       description:
         "Explore the top websites where you can find reliable product recommendations for various categories.",
-      image: "/images/top-recommendations.jpg",
+      image: "https://i.postimg.cc/tR2D0qVS/online-marketing.jpg",
       author: {
         name: "Ethan Smith",
         role: "Digital Marketing Specialist",
@@ -125,11 +125,11 @@ const Blogs = () => {
       },
     },
     {
-      title: "How Product Comparisons Can Save You Money",
+      title: "How Product Comparisons Can Save Your Money",
       date: "March 30, 2024",
       description:
         "Learn how comparing products before buying can help you make cost-effective choices and avoid overspending.",
-      image: "/images/save-money.jpg",
+      image: "https://i.postimg.cc/wT5JNHh5/word-made-wooden-cubes-with-jar-shopping-cart.jpg",
       author: {
         name: "Ethan Smith",
         role: "Digital Marketing Specialist",
@@ -142,7 +142,7 @@ const Blogs = () => {
       date: "March 10, 2024",
       description:
         "Find out why it's crucial to read product labels and what important information they can reveal about the items you're considering.",
-      image: "/images/product-labels.jpg",
+      image: "https://i.postimg.cc/ZqxDs1t6/volunteer-scanning-food-donations-charity.jpg",
       author: {
         name: "Mia Williams",
         role: "Consumer Insights Analyst",
@@ -151,11 +151,11 @@ const Blogs = () => {
       },
     },
     {
-      title: "The Future of Product Alternatives: Trends for 2025",
+      title: "The Future of Product Alternatives: Trends for Next Year",
       date: "February 20, 2024",
       description:
         "Get a glimpse into the future of product alternatives and the upcoming trends that will shape the shopping experience in 2025.",
-      image: "/images/future-trends.jpg",
+      image: "https://i.postimg.cc/0273J6Wt/sustainable-development-goals-still-life.jpg",
       author: {
         name: "Mia Williams",
         role: "Consumer Insights Analyst",
@@ -171,9 +171,13 @@ const Blogs = () => {
       </Helmet>
       <div className="min-h-[calc(100vh-585px)] max-w-screen-2xl mx-auto mt-4 mb-8 pb-6 px-4">
         <div className="mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-center capitalize lg:text-3xl pt-4 pb-8">
+          <h2 className="text-3xl text-center font-extrabold pt-4 font-poppins text-gray-800 capitalize">
             Latest Blog Posts
           </h2>
+          <p className="w-full md:w-2/3 mx-auto mt-4 text-center text-gray-900 font-poppins text-[18px] pb-4">
+                Our friendly team would love to hear from you. We are always
+                here to assist with any questions or concerns you may have.
+              </p>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12 animate__animated animate__zoomIn">
             {blogPosts.map((post, index) => (
               <div
