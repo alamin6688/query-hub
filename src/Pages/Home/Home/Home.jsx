@@ -10,7 +10,7 @@ const Home = () => {
       <Helmet>
         <title>Query Hub | Home</title>
       </Helmet>
-      <div className="animate__animated animate__zoomIn">
+      <div>
         <Banner></Banner>
         <HowItWorks></HowItWorks>
         <FAQ></FAQ>

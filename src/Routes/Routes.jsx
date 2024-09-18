@@ -6,6 +6,8 @@ import Login from "../Pages/Login/Login";
 import Blogs from "../Pages/Blogs/Blogs";
 import MyProfile from "../Pages/MyProfile/MyProfile";
 import Contact from "../Pages/Contact/Contact";
+import MyQueries from "../Pages/MyQueries/MyQueries";
+import AddQuery from "../Pages/AddQuery/AddQuery";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: <MyProfile></MyProfile>
+      },
+      {
+        path: "/my-queries",
+        element: <MyQueries></MyQueries>
+      },
+      {
+        path: "/add-query",
+        element: <AddQuery></AddQuery>
       },
       {
         path: "/login",
