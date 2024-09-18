@@ -35,7 +35,6 @@ const AddQuery = () => {
       current_date: formattedDate,
       current_time: formattedTime,
     };
-
     console.log(addQueryData);
   };
 
