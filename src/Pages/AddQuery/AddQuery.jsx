@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import "react-datepicker/dist/react-datepicker.css";
+import { Helmet } from "react-helmet-async";
 
 const AddQuery = () => {
   const { user } = useAuth();
@@ -40,8 +41,11 @@ const AddQuery = () => {
 
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto flex justify-center items-center min-h-[calc(100vh-538px)] mt-4 md:mt-10 mb-12">
-        <section className="w-full md:w-3/4 lg:w-1/2 p-4 pb-6 md:p-6 mx-auto bg-white rounded-md shadow-xl">
+      <Helmet>
+        <title>Add Query | Query Hub</title>
+      </Helmet>
+      <div className="max-w-screen-2xl mx-auto flex justify-center items-center min-h-[calc(100vh-538px)] md:mt-14 md:mb-14">
+        <section className="w-full md:w-3/4 lg:w-1/2 p-4 pb-6 md:p-6 mx-auto bg-base-100 rounded-md shadow-2xl animate__animated animate__zoomIn">
           <h2 className="text-2xl text-center font-extrabold lg:text-3xl text-gray-700 py-4 font-poppins">
             Add Product Query
           </h2>
@@ -128,7 +132,7 @@ const AddQuery = () => {
               </div>
             </div>
 
-            <div className="flex justify-end mt-6">
+            <div className="flex justify-end mt-8 pb-4">
               <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
                 Submit Query
               </button>

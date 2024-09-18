@@ -167,7 +167,7 @@ const Blogs = () => {
   return (
     <>
       <Helmet>
-        <title>Query Hub | Blogs</title>
+        <title>Blogs | Query Hub</title>
       </Helmet>
       <div className="min-h-[calc(100vh-585px)] max-w-screen-2xl mx-auto mt-4 mb-8 pb-6 px-4">
         <div className="mx-auto text-center">

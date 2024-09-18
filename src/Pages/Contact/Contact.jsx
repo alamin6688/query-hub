@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Query Hub | Contact Us</title>
+        <title>Contact Us | Query Hub </title>
       </Helmet>
       <div className="bg-gray-100">
         <section className="min-h-[calc(100vh-538px)] max-w-screen-2xl mx-auto">

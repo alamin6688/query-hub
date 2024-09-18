@@ -8,7 +8,7 @@ const MyProfile = () => {
   return (
     <>
       <Helmet>
-        <title>Query Hub | My Profile</title>
+        <title>My Profile | Query Hub</title>
       </Helmet>
       <div class="flex min-h-[calc(100vh-538px)] relative items-center justify-center w-full animate__animated animate__zoomIn">
         <div class="rounded-xl overflow-hidden relative text-center p-4 group items-center flex flex-col max-w-sm hover:shadow-2xl transition-all duration-500 shadow-2xl w-full bg-base-100">
