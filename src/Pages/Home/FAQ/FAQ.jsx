@@ -49,7 +49,7 @@ const FAQ = () => {
 
             <div>
               <h1 className="text-xl font-semibold text-gray-800">
-                How can I view other user's queries?
+                How can I view other's queries?
               </h1>
               <p className="mt-2 text-sm text-gray-600">
                 You can browse and view other users' queries on the "All

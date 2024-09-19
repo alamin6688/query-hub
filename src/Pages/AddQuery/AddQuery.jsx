@@ -48,8 +48,8 @@ const AddQuery = () => {
         <section className="w-full md:w-3/4 lg:w-1/2 p-4 pb-6 md:p-6 mx-auto bg-base-100 rounded-md shadow-2xl animate__animated animate__zoomIn">
           <h2 className="text-2xl text-center font-extrabold lg:text-3xl text-gray-700 py-4 font-poppins">
             Add Product Query
-          </h2>
-          <hr className="mt-2" />
+          </h2> 
+          <hr className="mt-2"/>
 
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
