@@ -12,11 +12,18 @@ const MyQueries = () => {
       <Helmet>
         <title>My Queries | Query Hub</title>
       </Helmet>
-      <div className="flex justify-center items-center min-h-[calc(100vh-538px)]">
-        <Link to="/add-query">
-          <button className="btn btn-primary">Add Query</button>
-        </Link>
-      </div>
+      <section className="flex justify-center items-center min-h-[calc(100vh-538px)]">
+        <div>
+          <Link to="/add-query">
+            <button className="btn btn-primary">Add Query</button>
+          </Link>
+        </div>
+        <div>
+          <Link to="/add-query">
+            <button className="btn btn-primary">Add Query</button>
+          </Link>
+        </div>
+      </section>
     </>
   );
 };
