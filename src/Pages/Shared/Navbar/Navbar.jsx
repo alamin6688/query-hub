@@ -66,7 +66,7 @@ const Navbar = () => {
               <span className="text-gray-500">Hub</span>
             </NavLink>
           </div>
-          <div className="navbar-end gap-0">
+          <div className="navbar-end gap-0 w-full">
             <div className="navbar-end hidden lg:flex">
               <ul className="menu menu-horizontal font-bold px-1">
                 {navLinks}
