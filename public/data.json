@@ -1,0 +1,69 @@
+[
+    {
+      "productName": "iPhone 14 Pro",
+      "productBrand": "Apple",
+      "productImageURL": "https://example.com/images/iphone14pro.jpg",
+      "queryTitle": "Looking For An Alternative With Better Battery Life",
+      "boycottingReason": "Battery Drains Too Quickly During Heavy Usage",
+      "userEmail": "alamin.kzs06@gmail.com",
+      "userName": "Fuade Hasan Alamin",
+      "userImage": "https://example.com/images/user1.jpg",
+      "datePosted": "2024-09-21T10:30:00"
+    },
+    {
+      "productName": "Samsung Galaxy S23",
+      "productBrand": "Samsung",
+      "productImageURL": "https://example.com/images/galaxys23.jpg",
+      "queryTitle": "Need A Phone With Better Display Quality",
+      "boycottingReason": "Display Colors Are Not As Vibrant",
+      "userEmail": "alamin.kzs06@gmail.com",
+      "userName": "Fuade Hasan Alamin",
+      "userImage": "https://example.com/images/user1.jpg",
+      "datePosted": "2024-09-20T14:12:00"
+    },
+    {
+      "productName": "Google Pixel 7",
+      "productBrand": "Google",
+      "productImageURL": "https://example.com/images/pixel7.jpg",
+      "queryTitle": "Looking For A Better Camera In Low Light",
+      "boycottingReason": "Camera Performs Poorly In Low-Light Conditions",
+      "userEmail": "alamin.kzs06@gmail.com",
+      "userName": "Fuade Hasan Alamin",
+      "userImage": "https://example.com/images/user1.jpg",
+      "datePosted": "2024-09-19T09:45:00"
+    },
+    {
+      "productName": "OnePlus 11",
+      "productBrand": "OnePlus",
+      "productImageURL": "https://example.com/images/oneplus11.jpg",
+      "queryTitle": "Searching For A Phone With Better Build Quality",
+      "boycottingReason": "Phone Feels Too Fragile",
+      "userEmail": "alamin.kzs06@gmail.com",
+      "userName": "Fuade Hasan Alamin",
+      "userImage": "https://example.com/images/user1.jpg",
+      "datePosted": "2024-09-18T12:00:00"
+    },
+    {
+      "productName": "Sony Xperia 5 IV",
+      "productBrand": "Sony",
+      "productImageURL": "https://example.com/images/xperia5iv.jpg",
+      "queryTitle": "Need A Phone With Better Audio Quality",
+      "boycottingReason": "Sound Output Is Weak And Muffled",
+      "userEmail": "alamin.kzs06@gmail.com",
+      "userName": "Fuade Hasan Alamin",
+      "userImage": "https://example.com/images/user1.jpg",
+      "datePosted": "2024-09-17T16:30:00"
+    },
+    {
+      "productName": "Huawei P50 Pro",
+      "productBrand": "Huawei",
+      "productImageURL": "https://example.com/images/huaweip50pro.jpg",
+      "queryTitle": "Looking For A Better Software Experience",
+      "boycottingReason": "Software Lacks Key Google Services",
+      "userEmail": "alamin.kzs06@gmail.com",
+      "userName": "Fuade Hasan Alamin",
+      "userImage": "https://example.com/images/user1.jpg",
+      "datePosted": "2024-09-16T11:15:00"
+    }
+  ]
+  

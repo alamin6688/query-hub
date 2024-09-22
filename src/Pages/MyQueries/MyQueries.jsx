@@ -1,4 +1,3 @@
-import React from "react";
 import useAuth from "../../Hooks/useAuth";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -35,8 +34,6 @@ const MyQueries = () => {
 
         {/* My Query Section */}
         <div className="my-queries-section p-6">
-          {/* Logic for displaying user queries */}
-          {/* If no queries found */}
           <div className="text-center">
             <p className="mb-5 text-lg font-medium">No queries found.</p>
             <Link to="/add-query">

@@ -1,14 +1,19 @@
 import { useState } from "react";
 import useAuth from "../../Hooks/useAuth";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import "react-datepicker/dist/react-datepicker.css";
 import { Helmet } from "react-helmet-async";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddQuery = () => {
   const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
   const [startDate, setStartDate] = useState(new Date());
+  const navigate = useNavigate();
 
   // Form Submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const product_name = form.product_name.value;
@@ -37,6 +42,16 @@ const AddQuery = () => {
       current_time: formattedTime,
     };
     console.log(addQueryData);
+
+    try {
+      const { data } = await axiosSecure.post("/myQueries", addQueryData);
+      toast.success("Query Data Updated Successfully.");
+      console.log(data);
+      navigate("/my-queries");
+    } catch (err) {
+      console.error(err, err.message);
+      toast.error("Failed to submit the query!");
+    }
   };
 
   return (
@@ -48,8 +63,8 @@ const AddQuery = () => {
         <section className="w-full md:w-3/4 lg:w-1/2 p-4 pb-6 md:p-6 mx-auto bg-base-100 rounded-md shadow-2xl animate__animated animate__zoomIn">
           <h2 className="text-2xl text-center font-extrabold lg:text-3xl text-gray-700 py-4 font-poppins">
             Add Product Query
-          </h2> 
-          <hr className="mt-2"/>
+          </h2>
+          <hr className="mt-2" />
 
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
