@@ -34,12 +34,12 @@ const AddQuery = () => {
       query_title,
       product_image,
       boycotting_reason,
-      user_email: user?.email,
-      user_name: user?.displayName,
-      user_photoURL: user?.photoURL,
-      query_date: startDate,
-      current_date: formattedDate,
-      current_time: formattedTime,
+      userEmail: user?.email,
+      userName: user?.displayName,
+      userPhotoURL: user?.photoURL,
+      queryDate: startDate,
+      currentDate: formattedDate,
+      currentTime: formattedTime,
     };
     console.log(addQueryData);
 
