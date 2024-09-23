@@ -12,7 +12,6 @@ const MyQueries = () => {
   const {
     data: queries = [],
     isLoading,
-    refetch,
   } = useQuery({
     queryFn: () => getData(),
     queryKey: ["queries", user?.email],
@@ -38,7 +37,7 @@ const MyQueries = () => {
       </Helmet>
       <section className="min-h-[calc(100vh-538px)]">
         <div
-          className="hero h-[300px] lg:h-[550px] bg-cover bg-center"
+          className="hero h-[300px] lg:h-[450px] bg-cover bg-center"
           style={{
             backgroundImage:
               "url(https://i.postimg.cc/X7YzJVGh/adult-male-illustrator-working-tablet-device.jpg)",

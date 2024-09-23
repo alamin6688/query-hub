@@ -8,6 +8,8 @@ import MyProfile from "../Pages/MyProfile/MyProfile";
 import Contact from "../Pages/Contact/Contact";
 import MyQueries from "../Pages/MyQueries/MyQueries";
 import AddQuery from "../Pages/AddQuery/AddQuery";
+import Queries from "../Pages/Queries/Queries";
+import QueryDetails from "../Pages/Queries/QueryDetails";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "/queries",
+        element: <Queries></Queries>
+      },
+      {
+        path: "/queries/:id",
+        element: <QueryDetails></QueryDetails>
       },
       {
         path: "/blogs",
