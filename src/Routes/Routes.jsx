@@ -26,7 +26,10 @@ export const router = createBrowserRouter([
       },
       {
         path: "/queries/:id",
-        element: <QueryDetails></QueryDetails>
+        element: <QueryDetails></QueryDetails>,
+        loader: ({params}) => fetch(
+          `${import.meta.env.VITE_API_URL}/myQueries/${params.id}`
+        )
       },
       {
         path: "/blogs",
