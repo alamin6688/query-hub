@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const QueryDetails = () => {
   const query = useLoaderData();
@@ -11,6 +11,14 @@ const QueryDetails = () => {
   return (
     <section className="min-h-[calc(100vh-539px)] bg-gray-100 flex items-center justify-center">
       <div className="max-w-screen-2xl mx-auto w-full py-12 px-4">
+        <h2 className="text-3xl text-center font-extrabold font-poppins text-gray-800 capitalize">
+          Query Details
+        </h2>
+        <p className="w-full md:w-2/3 mx-auto mt-4 mb-6 text-center text-gray-900 font-poppins text-[18px] pb-4">
+          Explore detailed information about each query including product
+          specifics and user insights. Find recommendations and alternatives to
+          enhance your decision-making process.
+        </p>
         <div className="card-compact w-full bg-base-100 shadow-xl md:flex items-center justify-center rounded-2xl">
           <div className="md:w-1/2 p-4 lg:p-6">
             <figure>
