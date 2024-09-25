@@ -28,7 +28,7 @@ const Navbar = () => {
   );
 
   return (
-    <section className="border-b-2">
+    <section className="border-b-2 bg-gradient-to-b from-[#1A2430] to-[#1B1F2E] text-white">
       <div className="z-50 relative max-w-screen-2xl mx-auto py-2">
         <div className="navbar px-4">
           <div className="navbar-start">
@@ -40,7 +40,7 @@ const Navbar = () => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="h-5 w-5 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -53,7 +53,7 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1000] mt-3 w-52 shadow font-semibold">
+              <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1000] mt-3 w-52 shadow font-semibold text-gray-900">
                 {navLinks}
               </ul>
             </div>
@@ -62,13 +62,13 @@ const Navbar = () => {
               className="btn btn-ghost pl-1 gap-0 text-3xl md:text-4xl"
             >
               <div></div>
-              <span className="pl-1">Query</span>
-              <span className="text-gray-500">Hub</span>
+              <span className="pl-1 text-white">Query</span>
+              <span className="text-gray-400">Hub</span>
             </NavLink>
           </div>
           <div className="navbar-end gap-0 w-full">
             <div className="navbar-end hidden lg:flex">
-              <ul className="menu menu-horizontal font-bold px-1">
+              <ul className="menu menu-horizontal font-bold px-1 text-white">
                 {navLinks}
               </ul>
             </div>
@@ -104,7 +104,7 @@ const Navbar = () => {
                       />
                     </div>
                   </div>
-                  <ul className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1000] mt-3 w-44 p-2 space-y-1 shadow font-semibold">
+                  <ul className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1000] mt-3 w-44 p-2 space-y-1 shadow font-semibold text-gray-900">
                     <li>
                       <NavLink to="/profile" className="p-1 px-2">
                         My Profile
