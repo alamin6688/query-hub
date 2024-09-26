@@ -1,11 +1,59 @@
-import { useLoaderData } from "react-router-dom";
+import React, { useState } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 const QueryDetails = () => {
   const query = useLoaderData();
+  const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
+  const navigate = useNavigate();
 
+  // Handle recommendation form submission
   const handleRecommend = async (e) => {
     e.preventDefault();
-    console.log("clicked");
+    const form = e.target;
+    const recommended_product_name = form.recommended_product_name.value;
+    const recommended_query_title = form.recommended_query_title.value;
+    const recommended_product_image = form.recommended_product_image.value;
+    const recommended_reason = form.recommended_reason.value;
+
+    // Generate the current timestamp automatically
+    const currentTimestamp = new Date().toISOString();
+
+    // Forming the data to be submitted
+    const recommendedData = {
+      recommended_product_name,
+      recommended_query_title,
+      recommended_product_image,
+      recommended_reason,
+      query_userEmail: query.userEmail,
+      query_userName: query.userName,
+      recommenderEmail: user?.email,
+      recommenderName: user?.displayName,
+      queryId: query._id,
+      query_title: query.query_title,
+      product_name: query.product_name,
+      currentTimestamp, // Automatically generated timestamp
+    };
+
+    console.log(recommendedData);
+
+    try {
+      const { data } = await axiosSecure.post(
+        "/recommendation",
+        recommendedData
+      );
+      if (data.acknowledged) {
+        toast.success("Recommendation Data Submitted Successfully.");
+        console.log(data);
+        navigate("/queries");
+      }
+    } catch (err) {
+      console.error(err.message);
+      toast.error("Failed to submit the recommendation!");
+    }
   };
 
   return (
@@ -73,78 +121,78 @@ const QueryDetails = () => {
           </div>
         </div>
 
-        {/* Recommendation */}
+        {/* Recommendation Section */}
         <div className="my-12 bg-base-100 px-4 py-4 md:py-8 rounded-2xl shadow-2xl">
           <h2 className="text-2xl text-center font-extrabold lg:text-3xl text-gray-800 pt-4 font-poppins">
             Recommendation
           </h2>
-          <p className="w-full md:w-2/3 mx-auto my-4 text-center text-gray-900 font-poppins text-[18px]">
-            We recommend leveraging targeted insights for continuous improvement
-            in your product offerings. Embrace a culture of innovation through
-            regular feedback and strategic enhancements.
-          </p>
-
-          <hr className="border-2 border-gray-600 mb-6 md:mb-8" />
 
           <form onSubmit={handleRecommend}>
-            {/* Recommended product Name */}
-            <div>
+            {/* Form fields */}
+            <div className="mt-4">
               <label
                 className="text-gray-700 font-semibold"
-                htmlFor="product_name"
+                htmlFor="recommended_product_name"
               >
-                Recommended product Name
+                Recommended Product Name:
               </label>
               <input
+                id="recommended_product_name"
                 name="recommended_product_name"
                 type="text"
+                required
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
               />
             </div>
 
-            <div className="space-y-4">
-              {/* Recommendation Title */}
-              <div className="flex flex-col gap-2 mt-4">
-                <label
-                  className="text-gray-700 font-semibold"
-                  htmlFor="query_title"
-                >
-                  Recommendation Title
-                </label>
-                <input
-                  name="recommended_query_title"
-                  type="text"
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
-                />
-              </div>
-
-              {/* Recommended Product Image */}
-              <div className="flex flex-col gap-2">
-                <label
-                  className="text-gray-700 font-semibold"
-                  htmlFor="product_image"
-                >
-                  Recommended Product Image URL
-                </label>
-                <input
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
-                  name="recommended_product_image"
-                  type="text"
-                />
-              </div>
-
-              {/* Recommendation reason */}
-              <div className="flex flex-col gap-2">
-                <label className="text-gray-700 font-semibold">
-                  Recommendation reason
-                </label>
-                <textarea
-                  name="recommended_reason"
-                  className="border w-full p-2 rounded-md"
-                ></textarea>
-              </div>
+            <div className="mt-4">
+              <label
+                className="text-gray-700 font-semibold"
+                htmlFor="recommended_query_title"
+              >
+                Recommendation Title:
+              </label>
+              <input
+                id="recommended_query_title"
+                name="recommended_query_title"
+                type="text"
+                required
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              />
             </div>
 
+            <div className="mt-4">
+              <label
+                className="text-gray-700 font-semibold"
+                htmlFor="recommended_product_image"
+              >
+                Recommended Product Image URL:
+              </label>
+              <input
+                id="recommended_product_image"
+                name="recommended_product_image"
+                type="text"
+                required
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              />
+            </div>
+
+            <div className="mt-4">
+              <label
+                className="text-gray-700 font-semibold"
+                htmlFor="recommended_reason"
+              >
+                Recommendation reason:
+              </label>
+              <textarea
+                id="recommended_reason"
+                name="recommended_reason"
+                required
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              />
+            </div>
+
+            {/* Submit Button */}
             <div className="flex justify-end mt-8 pb-4">
               <button
                 class="btn w-full font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-lg text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-base-300 hover:text-black before:-z-10 before:aspect-square before:hover:scale-200 before:hover:duration-500 relative z-10 px-4 py-2 overflow-hidden border-none rounded-full group"
@@ -158,8 +206,8 @@ const QueryDetails = () => {
                 >
                   <path
                     class="fill-gray-800 group-hover:fill-gray-800"
-                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                  ></path>
+                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18V1H7V18H9Z"
+                  />
                 </svg>
               </button>
             </div>
