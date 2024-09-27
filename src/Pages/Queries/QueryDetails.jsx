@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
@@ -10,6 +10,21 @@ const QueryDetails = () => {
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
 
+  // Function to format the timestamp
+  const formatTimestamp = (date) => {
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+
+    let hours = date.getHours();
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const ampm = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12;
+    hours = hours ? hours : 12; // Convert hour '0' to '12'
+
+    return `${day}/${month}/${year}, ${hours}:${minutes} ${ampm}`;
+  };
+
   // Handle recommendation form submission
   const handleRecommend = async (e) => {
     e.preventDefault();
@@ -19,8 +34,8 @@ const QueryDetails = () => {
     const recommended_product_image = form.recommended_product_image.value;
     const recommended_reason = form.recommended_reason.value;
 
-    // Generate the current timestamp automatically
-    const currentTimestamp = new Date().toISOString();
+    // Generate the current timestamp in the desired format: dd/mm/yyyy, hh:mm AM/PM
+    const currentTimestamp = formatTimestamp(new Date());
 
     // Forming the data to be submitted
     const recommendedData = {
@@ -35,20 +50,17 @@ const QueryDetails = () => {
       queryId: query._id,
       query_title: query.query_title,
       product_name: query.product_name,
-      currentTimestamp, // Automatically generated timestamp
+      currentTimestamp,
     };
-
-    console.log(recommendedData);
 
     try {
       const { data } = await axiosSecure.post(
-        "/recommendation",
+        "/recommendations",
         recommendedData
       );
       if (data.acknowledged) {
         toast.success("Recommendation Data Submitted Successfully.");
-        console.log(data);
-        navigate("/queries");
+        navigate("/my-recommendations");
       }
     } catch (err) {
       console.error(err.message);

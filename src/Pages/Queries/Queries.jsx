@@ -34,7 +34,7 @@ const Queries = () => {
   };
 
   const loadMore = () => {
-    setVisibleQueries((prevVisible) => prevVisible + 6); // Load 6 more queries
+    setVisibleQueries((prevVisible) => prevVisible + 6);
   };
 
   return (

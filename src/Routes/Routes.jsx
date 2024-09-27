@@ -10,6 +10,7 @@ import MyQueries from "../Pages/MyQueries/MyQueries";
 import AddQuery from "../Pages/AddQuery/AddQuery";
 import Queries from "../Pages/Queries/Queries";
 import QueryDetails from "../Pages/Queries/QueryDetails";
+import MyRecommendations from "../Pages/MyRecommendations/MyRecommendations";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
       {
         path: "/my-queries",
         element: <MyQueries></MyQueries>
+      },
+      {
+        path: "/my-recommendations",
+        element: <MyRecommendations></MyRecommendations>
       },
       {
         path: "/add-query",
