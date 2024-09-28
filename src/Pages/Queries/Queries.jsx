@@ -8,7 +8,7 @@ const Queries = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
-  const [visibleQueries, setVisibleQueries] = useState(69);
+  const [visibleQueries, setVisibleQueries] = useState(6);
 
   const {
     data: queries = [],

@@ -9,10 +9,7 @@ const MyQueries = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
 
-  const {
-    data: queries = [],
-    isLoading,
-  } = useQuery({
+  const { data: queries = [], isLoading } = useQuery({
     queryFn: () => getData(),
     queryKey: ["queries", user?.email],
   });
@@ -91,7 +88,7 @@ const MyQueries = () => {
                     </p>
 
                     <div className="flex items-center justify-between mt-4">
-                      <Link to={`/query/${query._id}`}>
+                      <Link to={`/queries/${query._id}`}>
                         <button className="btn btn-primary">
                           View Details
                         </button>
