@@ -11,6 +11,7 @@ import AddQuery from "../Pages/AddQuery/AddQuery";
 import Queries from "../Pages/Queries/Queries";
 import QueryDetails from "../Pages/Queries/QueryDetails";
 import MyRecommendations from "../Pages/MyRecommendations/MyRecommendations";
+import UpdateQuery from "../Pages/UpdateQuery/UpdateQuery";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,13 @@ export const router = createBrowserRouter([
       {
         path: "/my-queries",
         element: <MyQueries></MyQueries>
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateQuery></UpdateQuery>,
+        loader: ({params}) => fetch(
+          `${import.meta.env.VITE_API_URL}/myQueries/${params.id}`
+        )
       },
       {
         path: "/my-recommendations",
