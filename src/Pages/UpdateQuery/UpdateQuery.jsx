@@ -1,6 +1,7 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 
 const UpdateQuery = () => {
@@ -11,6 +12,42 @@ const UpdateQuery = () => {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
+    const form = e.target;
+    const _id = query._id;
+    const product_name = form.product_name.value;
+    const product_brand = form.product_brand.value;
+    const query_title = form.query_title.value;
+    const product_image = form.product_image.value;
+    const boycotting_reason = form.boycotting_reason.value;
+    const queryDate = query.queryDate;
+    const currentDate = query.currentDate;
+    const currentTime = query.currentTime;
+
+    // Update Query data object
+    const updateData = {
+      product_name,
+      product_brand,
+      query_title,
+      product_image,
+      boycotting_reason,
+      userEmail: user?.email,
+      userName: user?.displayName,
+      userPhotoURL: user?.photoURL,
+      queryDate,
+      currentDate,
+      currentTime,
+    };
+    console.log(updateData);
+
+    try {
+      const { data } = await axiosSecure.put(`/myQueries/${_id}`, updateData);
+      console.log(data);
+      toast.success("Query Data Updated Successfully!");
+      navigate("/my-queries");
+    } catch (err) {
+      console.log(err);
+      toast.error(err.message);
+    }
   };
 
   return (
