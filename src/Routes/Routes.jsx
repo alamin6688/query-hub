@@ -12,6 +12,7 @@ import Queries from "../Pages/Queries/Queries";
 import QueryDetails from "../Pages/Queries/QueryDetails";
 import MyRecommendations from "../Pages/MyRecommendations/MyRecommendations";
 import UpdateQuery from "../Pages/UpdateQuery/UpdateQuery";
+import RecommendationsForMe from "../Pages/RecommendationsForMe/RecommendationsForMe";
 
 export const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ export const router = createBrowserRouter([
         loader: ({params}) => fetch(
           `${import.meta.env.VITE_API_URL}/myQueries/${params.id}`
         )
+      },
+      {
+        path: "/recommendations-for-me",
+        element: <RecommendationsForMe></RecommendationsForMe>
       },
       {
         path: "/my-recommendations",

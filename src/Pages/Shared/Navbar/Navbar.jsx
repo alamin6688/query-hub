@@ -116,7 +116,7 @@ const Navbar = () => {
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink to="/recommendations" className="p-1 px-2">
+                      <NavLink to="/recommendations-for-me" className="p-1 px-2">
                         Recommendations For Me
                       </NavLink>
                     </li>
