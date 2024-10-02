@@ -3,6 +3,8 @@ import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const MyRecommendations = () => {
   const { user } = useAuth();
@@ -31,8 +33,38 @@ const MyRecommendations = () => {
     (recommendation) => recommendation.recommenderEmail === user?.email
   );
 
-  const handleDelete = (id) => {
-    console.log(id);
+  // Handle Delete
+  const handleDelete = async (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+      customClass: {
+        popup: "bg-[#FFFFFF] rounded-xl",
+      },
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const { data } = await axiosSecure.delete(`/recommendations/${id}`);
+          console.log(data);
+
+          // Display Success Toast
+          toast.success("Delete Successful.");
+
+          // Refresh UI
+          refetch();
+        } catch (err) {
+          console.log(err.message);
+          toast.error(err.message);
+        }
+      } else {
+        toast.error("Delete canceled!");
+      }
+    });
   };
 
   return (
@@ -44,7 +76,7 @@ const MyRecommendations = () => {
         <div className="max-w-screen-2xl mx-auto pt-2 pb-10">
           <div>
             <h2 className="text-3xl text-center font-extrabold font-poppins text-gray-800 capitalize pt-12">
-              Recommendations
+              Your Recommendations
             </h2>
             <p className="w-full md:w-2/3 mx-auto mt-4 mb-6 text-center text-gray-900 font-poppins text-[18px] pb-4">
               View all the recommendations you've made for various products.

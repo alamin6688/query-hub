@@ -3,6 +3,10 @@ import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
 
 const RecommendationsForMe = () => {
   const { user } = useAuth();
@@ -33,10 +37,6 @@ const RecommendationsForMe = () => {
       recommendation.query_userEmail === user?.email && // Show only for user's queries
       recommendation.recommenderEmail !== user?.email // Show only recommendations made by others
   );
-
-  const handleDelete = (id) => {
-    console.log(id);
-  };
 
   return (
     <>
@@ -107,8 +107,10 @@ const RecommendationsForMe = () => {
                         >
                           Recommended Reason
                         </th>
-
-                        <th className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right text-gray-500">
+                        <th
+                          scope="col"
+                          className="px-4 py-3.5 text-sm font-bold text-left rtl:text-right text-gray-500"
+                        >
                           Action
                         </th>
                       </tr>
@@ -136,30 +138,12 @@ const RecommendationsForMe = () => {
                           <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                             {recommendation.recommended_reason}
                           </td>
-                          <td className="px-4 py-4 text-sm whitespace-nowrap">
-                            <div className="flex items-center gap-x-6">
-                              {/* Delete Button */}
-                              <button
-                                onClick={() => handleDelete(recommendation._id)}
-                                class="inline-flex items-center px-4 py-2 bg-red-600 transition ease-in-out delay-75 hover:bg-red-700 text-white text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110"
-                              >
-                                <svg
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  class="h-5 w-5 mr-2"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                                    stroke-width="2"
-                                    stroke-linejoin="round"
-                                    stroke-linecap="round"
-                                  ></path>
-                                </svg>
-                                Delete
+                          <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                            <Link>
+                              <button className="inline-flex items-center px-4 py-2 bg-green-600 transition ease-in-out delay-75 hover:bg-green-700 text-white text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110">
+                                <FaEye className="mr-2 text-xl" /> View Details
                               </button>
-                            </div>
+                            </Link>
                           </td>
                         </tr>
                       ))}
