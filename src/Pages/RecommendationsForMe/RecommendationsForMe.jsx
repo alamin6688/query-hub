@@ -139,7 +139,7 @@ const RecommendationsForMe = () => {
                             {recommendation.recommended_reason}
                           </td>
                           <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                            <Link>
+                            <Link to={`/recommendations/${recommendation._id}`}>
                               <button className="inline-flex items-center px-4 py-2 bg-green-600 transition ease-in-out delay-75 hover:bg-green-700 text-white text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110">
                                 <FaEye className="mr-2 text-xl" /> View Details
                               </button>
