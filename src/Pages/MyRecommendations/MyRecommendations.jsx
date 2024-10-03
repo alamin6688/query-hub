@@ -72,7 +72,7 @@ const MyRecommendations = () => {
       <Helmet>
         <title>My Recommendations | Query Hub</title>
       </Helmet>
-      <section className="min-h-[calc(100vh-539px)] bg-gray-100">
+      <section className="min-h-[calc(100vh-188px)] pt-10 bg-gray-100">
         <div className="max-w-screen-2xl mx-auto pt-2 pb-10">
           <div>
             <h2 className="text-3xl text-center font-extrabold font-poppins text-gray-800 capitalize pt-12">

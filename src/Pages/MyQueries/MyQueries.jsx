@@ -73,7 +73,7 @@ const MyQueries = () => {
       <Helmet>
         <title>My Queries | Query Hub</title>
       </Helmet>
-      <section className="min-h-[calc(100vh-538px)]">
+      <section className="min-h-[calc(100vh-188px)]">
         <div
           className="hero h-[300px] lg:h-[450px] bg-cover bg-center"
           style={{

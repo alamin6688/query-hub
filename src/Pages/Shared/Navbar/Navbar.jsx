@@ -1,8 +1,9 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const location = useLocation();
 
   const handleLogout = () => {
     logOut()
@@ -10,148 +11,162 @@ const Navbar = () => {
       .catch((error) => console.error(error));
   };
 
+  // Determine the text color based on the current page
+  const textColorClass =
+    location.pathname === "/" ? "text-white" : "text-[#FAFDFF]";
+
   const navLinks = (
     <>
-      <NavLink to="/" className="p-1 px-2">
+      <NavLink to="/" className={`p-1 px-2 ${textColorClass}`}>
         Home
       </NavLink>
-      <NavLink to="/queries" className="p-1 px-2">
+      <NavLink to="/queries" className={`p-1 px-2 ${textColorClass}`}>
         Queries
       </NavLink>
-      <NavLink to="/blogs" className="p-1 px-2">
+      <NavLink to="/blogs" className={`p-1 px-2 ${textColorClass}`}>
         Blogs
       </NavLink>
-      <NavLink to="/contact" className="p-1 px-2">
+      <NavLink to="/contact" className={`p-1 px-2 ${textColorClass}`}>
         Contact Us
       </NavLink>
     </>
   );
 
   return (
-    <section className="border-b-2 bg-gradient-to-b from-[#1A2430] to-[#1B1F2E] text-white">
-      <div className="z-50 relative max-w-screen-2xl mx-auto py-2">
-        <div className="navbar px-4 md:px-0">
-          <div className="navbar-start">
-            <div className="dropdown">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost lg:hidden px-0"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+    <>
+      <section className="text-white">
+        <div className="relative py-0 z-50">
+          <div className="navbar bg-opacity-30 bg-black px-4 fixed top-0 left-0 right-0 z-50 max-w-screen-2xl mx-auto rounded-2xl">
+            <div className="navbar-start w-full ">
+              <div className="dropdown">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost lg:hidden px-0"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </div>
-              <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1000] mt-3 w-52 shadow font-semibold text-gray-900">
-                {navLinks}
-              </ul>
-            </div>
-            <NavLink
-              to="/"
-              className="btn btn-ghost pl-1 gap-0 text-3xl md:text-4xl hover:shadow-lg duration-300 hover:scale-[1.05] transition-all"
-            >
-              <div className="font-blackLetter tracking-wider">
-                <span className="pl-1 text-white ">Query</span>
-                <span className="text-gray-400">Hub</span>
-              </div>
-            </NavLink>
-          </div>
-          <div className="navbar-end gap-0 w-full">
-            <div className="navbar-end hidden lg:flex">
-              <ul className="menu menu-horizontal font-bold px-1 text-white">
-                {navLinks}
-              </ul>
-            </div>
-            {!user && (
-              <div>
-                <Link
-                  to="/login"
-                  className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white bg-gray-800 rounded-lg hover:bg-gray-700"
-                >
-                  Login
-                </Link>
-              </div>
-            )}
-            <div className="dropdown dropdown-end">
-              {user && (
-                <div>
-                  <div
-                    tabIndex={0}
-                    role="button"
-                    className="btn btn-ghost btn-circle avatar"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <div
-                      className="w-10 rounded-full"
-                      title={user?.displayName || "Guest"}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h8m-8 6h16"
+                    />
+                  </svg>
+                </div>
+                <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-40 mt-3 w-52 shadow font-semibold text-gray-900">
+                  {navLinks}
+                </ul>
+              </div>
+              <NavLink
+                to="/"
+                className="hover:shadow-lg duration-300 hover:scale-[1.05] transition-all"
+              >
+                <div className="font-blackLetter tracking-wider w-full">
+                  <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-xl backdrop-blur-lg py-2 text-base font-semibold transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50">
+                    <span
+                      className={`text-2xl md:text-3xl px-4 ${textColorClass}`}
                     >
-                      <img
-                        referrerPolicy="no-referrer"
-                        alt="User avatar"
-                        src={
-                          user?.photoURL ||
-                          "https://i.postimg.cc/wM5cB69C/istockphoto-1300845620-612x612.jpg"
-                        }
-                      />
+                      Query Hub
+                    </span>
+                    <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+                      <div className="relative h-full w-10 bg-white/20"></div>
                     </div>
-                  </div>
-                  <ul className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1000] mt-3 w-44 p-2 space-y-1 shadow font-semibold text-gray-900">
-                    <li>
-                      <NavLink to="/profile" className="p-1 px-2">
-                        My Profile
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/queries" className="p-1 px-2">
-                        Queries
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/recommendations-for-me"
-                        className="p-1 px-2"
-                      >
-                        Recommendations For Me
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/my-queries" className="p-1 px-2">
-                        My Queries
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/my-recommendations" className="p-1 px-2">
-                        My recommendations
-                      </NavLink>
-                    </li>
-                    <li>
-                      {user && (
-                        <Link
-                          onClick={handleLogout}
-                          className="btn bg-red-500 hover:bg-red-600 text-white border-none hover:font-bold"
-                        >
-                          Logout
-                        </Link>
-                      )}
-                    </li>
-                  </ul>
+                  </button>
+                </div>
+              </NavLink>
+            </div>
+            <div className="navbar-end gap-0 w-full">
+              <div className="navbar-end hidden lg:flex">
+                <ul className="menu menu-horizontal font-bold px-1 text-white">
+                  {navLinks}
+                </ul>
+              </div>
+              {!user && (
+                <div>
+                  <Link
+                    to="/login"
+                    className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white bg-gray-800 rounded-lg hover:bg-gray-700"
+                  >
+                    Login
+                  </Link>
                 </div>
               )}
+              <div className="dropdown dropdown-end">
+                {user && (
+                  <div>
+                    <div
+                      tabIndex={0}
+                      role="button"
+                      className="btn btn-ghost btn-circle avatar"
+                    >
+                      <div
+                        className="w-10 rounded-full"
+                        title={user?.displayName || "Guest"}
+                      >
+                        <img
+                          referrerPolicy="no-referrer"
+                          alt="User avatar"
+                          src={
+                            user?.photoURL ||
+                            "https://i.postimg.cc/wM5cB69C/istockphoto-1300845620-612x612.jpg"
+                          }
+                        />
+                      </div>
+                    </div>
+                    <ul className="menu menu-sm dropdown-content bg-base-200 rounded-box z-50 mt-3 w-44 p-2 space-y-1 shadow font-semibold text-gray-900">
+                      <li>
+                        <NavLink to="/profile" className="p-1 px-2">
+                          My Profile
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/queries" className="p-1 px-2">
+                          Queries
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/recommendations-for-me"
+                          className="p-1 px-2"
+                        >
+                          Recommendations For Me
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/my-queries" className="p-1 px-2">
+                          My Queries
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/my-recommendations" className="p-1 px-2">
+                          My Recommendations
+                        </NavLink>
+                      </li>
+                      <li>
+                        {user && (
+                          <Link
+                            onClick={handleLogout}
+                            className="btn bg-red-500 hover:bg-red-600 text-white border-none hover:font-bold"
+                          >
+                            Logout
+                          </Link>
+                        )}
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

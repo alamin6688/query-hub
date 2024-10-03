@@ -17,7 +17,7 @@ import bgImg03 from "../../../assets/blogPostImages/Comparing Products.jpg";
 export default function Carousel() {
   return (
     <>
-      <div className="mb-10">
+      <div className="mb-12">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
