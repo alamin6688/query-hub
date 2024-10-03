@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <section className="border-b-2 bg-gradient-to-b from-[#1A2430] to-[#1B1F2E] text-white">
       <div className="z-50 relative max-w-screen-2xl mx-auto py-2">
-        <div className="navbar px-4">
+        <div className="navbar px-4 md:px-0">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -59,11 +59,12 @@ const Navbar = () => {
             </div>
             <NavLink
               to="/"
-              className="btn btn-ghost pl-1 gap-0 text-3xl md:text-4xl"
+              className="btn btn-ghost pl-1 gap-0 text-3xl md:text-4xl hover:shadow-lg duration-300 hover:scale-[1.05] transition-all"
             >
-              <div></div>
-              <span className="pl-1 text-white">Query</span>
-              <span className="text-gray-400">Hub</span>
+              <div className="font-blackLetter tracking-wider">
+                <span className="pl-1 text-white ">Query</span>
+                <span className="text-gray-400">Hub</span>
+              </div>
             </NavLink>
           </div>
           <div className="navbar-end gap-0 w-full">
@@ -116,7 +117,10 @@ const Navbar = () => {
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink to="/recommendations-for-me" className="p-1 px-2">
+                      <NavLink
+                        to="/recommendations-for-me"
+                        className="p-1 px-2"
+                      >
                         Recommendations For Me
                       </NavLink>
                     </li>

@@ -11,7 +11,7 @@ import {
 const FAQ = () => {
   return (
     <section className="bg-white text-gray-900 mb-12">
-      <div className="max-w-screen-2xl px-6 py-12 mx-auto">
+      <div className="max-w-screen-2xl px-4 py-12 mx-auto">
         <h1 className="text-2xl text-center font-extrabold lg:text-3xl text-gray-800 font-poppins">
           Frequently Asked Questions
         </h1>
@@ -23,7 +23,7 @@ const FAQ = () => {
 
         <div className="grid grid-cols-1 gap-8 mt-8 lg:mt-16 md:grid-cols-2 xl:grid-cols-3">
           {/* First Question */}
-          <div>
+          <div className="hover:shadow-lg duration-300 hover:scale-[1.05] transition-all p-4 shadow-xl bg-gray-100">
             <div className="inline-block p-3 bg-green-600 rounded-lg text-white mb-2">
               <FaCommentAlt className="w-6 h-6" />
             </div>
@@ -42,7 +42,7 @@ const FAQ = () => {
           </div>
 
           {/* Second Question */}
-          <div>
+          <div className="hover:shadow-lg duration-300 hover:scale-[1.05] transition-all p-4 shadow-xl bg-gray-100">
             <div className="inline-block p-3 bg-blue-600 rounded-lg text-white mb-2">
               <FaSearch className="w-6 h-6" />
             </div>
@@ -61,7 +61,7 @@ const FAQ = () => {
           </div>
 
           {/* Third Question */}
-          <div>
+          <div className="hover:shadow-lg duration-300 hover:scale-[1.05] transition-all p-4 shadow-xl bg-gray-100">
             <div className="inline-block p-3 bg-yellow-600 rounded-lg text-white mb-2">
               <FaLightbulb className="w-6 h-6" />
             </div>
@@ -79,7 +79,7 @@ const FAQ = () => {
           </div>
 
           {/* Fourth Question */}
-          <div>
+          <div className="hover:shadow-lg duration-300 hover:scale-[1.05] transition-all p-4 shadow-xl bg-gray-100">
             <div className="inline-block p-3 bg-orange-600 rounded-lg text-white mb-2">
               <FaEdit className="w-6 h-6" />
             </div>
@@ -97,7 +97,7 @@ const FAQ = () => {
           </div>
 
           {/* Fifth Question */}
-          <div>
+          <div className="hover:shadow-lg duration-300 hover:scale-[1.05] transition-all p-4 shadow-xl bg-gray-100">
             <div className="inline-block p-3 bg-red-600 rounded-lg text-white mb-2">
               <FaRegCreditCard className="w-6 h-6" />
             </div>
@@ -115,7 +115,7 @@ const FAQ = () => {
           </div>
 
           {/* Sixth Question */}
-          <div>
+          <div className="hover:shadow-lg duration-300 hover:scale-[1.05] transition-all p-4 shadow-xl bg-gray-100">
             <div className="inline-block p-3 bg-gray-600 rounded-lg text-white mb-2">
               <FaQuestionCircle className="w-6 h-6" />
             </div>

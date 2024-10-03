@@ -41,7 +41,7 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg duration-300 hover:scale-[1.05] transition-all"
+              className="bg-gray-100 p-6 rounded-lg shadow-xl hover:shadow-lg duration-300 hover:scale-[1.05] transition-all"
             >
               <div className="text-6xl mb-4">{step.icon}</div>
               <h3 className="text-xl text-gray-800 font-bold mb-2">
