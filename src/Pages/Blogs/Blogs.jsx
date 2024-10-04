@@ -103,7 +103,8 @@ const Blogs = () => {
       date: "May 5, 2024",
       description:
         "Join online communities to get real-time insights from people who have already purchased or reviewed a product you are interested in.",
-      image: "https://i.postimg.cc/FsybxhVs/customer-experience-creative-collage.jpg",
+      image:
+        "https://i.postimg.cc/FsybxhVs/customer-experience-creative-collage.jpg",
       author: {
         name: "Olivia Brown",
         role: "Sustainability Expert",
@@ -129,7 +130,8 @@ const Blogs = () => {
       date: "March 30, 2024",
       description:
         "Learn how comparing products before buying can help you make cost-effective choices and avoid overspending.",
-      image: "https://i.postimg.cc/wT5JNHh5/word-made-wooden-cubes-with-jar-shopping-cart.jpg",
+      image:
+        "https://i.postimg.cc/wT5JNHh5/word-made-wooden-cubes-with-jar-shopping-cart.jpg",
       author: {
         name: "Ethan Smith",
         role: "Digital Marketing Specialist",
@@ -142,7 +144,8 @@ const Blogs = () => {
       date: "March 10, 2024",
       description:
         "Find out why it's crucial to read product labels and what important information they can reveal about the items you're considering.",
-      image: "https://i.postimg.cc/ZqxDs1t6/volunteer-scanning-food-donations-charity.jpg",
+      image:
+        "https://i.postimg.cc/ZqxDs1t6/volunteer-scanning-food-donations-charity.jpg",
       author: {
         name: "Mia Williams",
         role: "Consumer Insights Analyst",
@@ -155,7 +158,8 @@ const Blogs = () => {
       date: "February 20, 2024",
       description:
         "Get a glimpse into the future of product alternatives and the upcoming trends that will shape the shopping experience in 2025.",
-      image: "https://i.postimg.cc/0273J6Wt/sustainable-development-goals-still-life.jpg",
+      image:
+        "https://i.postimg.cc/0273J6Wt/sustainable-development-goals-still-life.jpg",
       author: {
         name: "Mia Williams",
         role: "Consumer Insights Analyst",
@@ -169,15 +173,15 @@ const Blogs = () => {
       <Helmet>
         <title>Blogs | Query Hub</title>
       </Helmet>
-      <div className="min-h-[calc(100vh-188px)] max-w-screen-2xl mx-auto mt-4 mb-8 pt-16 pb-6 px-4">
+      <div className="min-h-[calc(100vh-188px)] max-w-screen-2xl mx-auto mt-4 mb-8 pt-16 pb-6 px-4 bg-[#FAFDFF]">
         <div className="mx-auto text-center">
           <h2 className="text-3xl text-center font-extrabold pt-4 font-poppins text-gray-800 capitalize">
             Latest Blog Posts
           </h2>
           <p className="w-full md:w-2/3 mx-auto mt-4 text-center text-gray-900 font-poppins text-[18px] pb-4">
-                Our friendly team would love to hear from you. We are always
-                here to assist with any questions or concerns you may have.
-              </p>
+            Our friendly team would love to hear from you. We are always here to
+            assist with any questions or concerns you may have.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12 animate__animated animate__zoomIn">
             {blogPosts.map((post, index) => (
               <div

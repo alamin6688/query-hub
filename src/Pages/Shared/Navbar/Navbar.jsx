@@ -17,16 +17,16 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <NavLink to="/" className={`p-1 px-2 ${textColorClass}`}>
+      <NavLink to="/" className={`p-1 px-2 md:${textColorClass}`}>
         Home
       </NavLink>
-      <NavLink to="/queries" className={`p-1 px-2 ${textColorClass}`}>
+      <NavLink to="/queries" className={`p-1 px-2 md:${textColorClass}`}>
         Queries
       </NavLink>
-      <NavLink to="/blogs" className={`p-1 px-2 ${textColorClass}`}>
+      <NavLink to="/blogs" className={`p-1 px-2 md:${textColorClass}`}>
         Blogs
       </NavLink>
-      <NavLink to="/contact" className={`p-1 px-2 ${textColorClass}`}>
+      <NavLink to="/contact" className={`p-1 px-2 md:${textColorClass}`}>
         Contact Us
       </NavLink>
     </>
@@ -34,9 +34,9 @@ const Navbar = () => {
 
   return (
     <>
-      <section className="text-white">
+      <section className="">
         <div className="relative py-0 z-50">
-          <div className="navbar bg-opacity-30 bg-black px-4 fixed top-0 left-0 right-0 z-50 max-w-screen-2xl mx-auto rounded-2xl">
+          <div className="navbar bg-opacity-30 bg-black px-4 fixed top-0 left-0 right-0 z-50 max-w-screen-2xl mx-auto md:rounded-2xl">
             <div className="navbar-start w-full ">
               <div className="dropdown">
                 <div
@@ -65,7 +65,7 @@ const Navbar = () => {
               </div>
               <NavLink
                 to="/"
-                className="hover:shadow-lg duration-300 hover:scale-[1.05] transition-all"
+                className="md:pl-2 hover:shadow-lg duration-300 hover:scale-[1.05] transition-all"
               >
                 <div className="font-blackLetter tracking-wider w-full">
                   <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-xl backdrop-blur-lg py-2 text-base font-semibold transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50">
@@ -82,7 +82,7 @@ const Navbar = () => {
               </NavLink>
             </div>
             <div className="navbar-end gap-0 w-full">
-              <div className="navbar-end hidden lg:flex">
+              <div className="navbar-end hidden lg:flex w-full">
                 <ul className="menu menu-horizontal font-bold px-1 text-white">
                   {navLinks}
                 </ul>

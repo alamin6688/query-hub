@@ -84,7 +84,7 @@ const MyQueries = () => {
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content w-full text-neutral-content text-center">
             <div>
-              <h1 className="mb-5 text-5xl font-bold">Queries</h1>
+              <h1 className="mb-5 text-5xl text-white font-bold">Queries</h1>
               <p className="mb-5 w-full md:w-2/3 mx-auto">
                 Manage your queries easily. View, update, or delete your queries
                 and add new ones to get the answers you need.
