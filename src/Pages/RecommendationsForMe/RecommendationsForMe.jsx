@@ -48,7 +48,7 @@ const RecommendationsForMe = () => {
             <h2 className="text-2xl md:text-3xl text-center font-extrabold font-poppins text-gray-800 capitalize pt-12">
               Recommendations For Me
             </h2>
-            <p className="w-full md:w-2/3 mx-auto mt-4 mb-6 text-center text-gray-900 font-poppins text-[16px] md:text-[18px] pb-4">
+            <p className="w-full md:w-2/3 mx-auto mt-4 mb-6 text-center text-gray-900 font-poppins text-[16px] md:text-[18px] px-2 pb-4">
               View all the recommendations made by others for your queries in a
               convenient table format. Easily browse through detailed
               suggestions tailored to your specific needs.
