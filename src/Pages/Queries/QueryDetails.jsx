@@ -69,7 +69,7 @@ const QueryDetails = () => {
   };
 
   return (
-    <section className="min-h-[calc(100vh-539px)] bg-gray-100 flex items-center justify-center pt-16">
+    <section className="min-h-[calc(100vh-539px)] bg-gray-100 flex items-center justify-center">
       <div className="max-w-screen-2xl mx-auto w-full py-12 px-4">
         <h2 className="text-3xl text-center font-extrabold font-poppins text-gray-800 capitalize">
           Query Details
@@ -79,7 +79,7 @@ const QueryDetails = () => {
           specifics and user insights. Find recommendations and alternatives to
           enhance your decision-making process.
         </p>
-        <div className="card-compact w-full bg-base-100 shadow-xl md:flex items-center justify-center rounded-2xl">
+        <div className="card-compact w-full bg-base-100 shadow-xl md:flex items-center justify-center rounded-2xl animate__animated animate__zoomIn">
           <div className="md:w-1/2 p-4 lg:p-6">
             <figure>
               <img
@@ -134,7 +134,7 @@ const QueryDetails = () => {
         </div>
 
         {/* Recommendation Section */}
-        <div className="my-12 bg-base-100 px-4 py-4 md:py-8 rounded-2xl shadow-2xl">
+        <div className="my-12 bg-base-100 px-4 py-4 md:py-8 rounded-2xl shadow-2xl animate__animated animate__zoomIn">
           <h2 className="text-2xl text-center font-extrabold lg:text-3xl text-gray-800 pt-4 font-poppins">
             Recommendation
           </h2>

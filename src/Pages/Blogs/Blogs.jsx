@@ -45,7 +45,7 @@ const Blogs = () => {
         <title>Blogs | Query Hub</title>
       </Helmet>
       <section className="bg-[#FAFDFF]">
-        <div className="min-h-[calc(100vh-188px)] max-w-screen-2xl mx-auto mt-4 mb-6 pt-16 pb-6 px-4">
+        <div className="min-h-[calc(100vh-188px)] max-w-screen-2xl mx-auto mt-4 mb-6 pb-6 px-4">
           <div className="mx-auto text-center">
             <h2 className="text-3xl text-center font-extrabold pt-4 font-poppins text-gray-800 capitalize">
               Latest Blog Posts

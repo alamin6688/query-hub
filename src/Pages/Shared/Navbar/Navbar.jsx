@@ -34,10 +34,11 @@ const Navbar = () => {
 
   return (
     <>
-      <section className="">
-        <div className="relative py-0 z-50">
-          <div className="navbar bg-opacity-30 bg-black px-4 fixed top-0 left-0 right-0 z-50 max-w-screen-2xl mx-auto md:rounded-2xl">
-            <div className="navbar-start w-full ">
+      <section className="w-full bg-gradient-to-l from-[#1b243a] to-[#020617]">
+        <div className="relative z-50">
+          {/* Ensure the navbar spans the full width and uses container for centering */}
+          <div className="navbar max-w-screen-2xl mx-auto w-full">
+            <div className="navbar-start ">
               <div className="dropdown">
                 <div
                   tabIndex={0}
@@ -81,14 +82,15 @@ const Navbar = () => {
                 </div>
               </NavLink>
             </div>
-            <div className="navbar-end gap-0 w-full">
-              <div className="navbar-end hidden lg:flex w-full">
+
+            <div className="navbar-end gap-0 md:w-full">
+              <div className="navbar-end hidden lg:flex  justify-end">
                 <ul className="menu menu-horizontal font-bold px-1 text-white">
                   {navLinks}
                 </ul>
               </div>
               {!user && (
-                <div>
+                <div className="ml-auto">
                   <Link
                     to="/login"
                     className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white bg-gray-800 rounded-lg hover:bg-gray-700"

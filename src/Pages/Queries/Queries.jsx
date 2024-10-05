@@ -43,9 +43,9 @@ const Queries = () => {
       <Helmet>
         <title>Queries | Query Hub</title>
       </Helmet>
-      <section className="min-h-[calc(100vh-188px)] pt-16">
+      <section className="min-h-[calc(100vh-188px)]">
         <div className="max-w-screen-2xl mx-auto">
-          <h2 className="text-3xl text-center font-extrabold pt-4 font-poppins text-gray-800 capitalize mt-2">
+          <h2 className="text-3xl text-center font-extrabold pt-6 font-poppins text-gray-800 capitalize mt-2">
             Queries
           </h2>
           <p className="w-full md:w-2/3 mx-auto mt-4 text-center text-gray-900 font-poppins text-[18px] pb-4">
@@ -55,7 +55,7 @@ const Queries = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pt-8 pb-12">
             {queries.slice(0, visibleQueries).map((query) => (
-              <div key={query._id} className="card bg-base-100 shadow-xl">
+              <div key={query._id} className="card bg-base-100 shadow-2xl animate__animated animate__zoomIn">
                 <figure>
                   <img src={query.product_image} alt="Product Image" />
                 </figure>

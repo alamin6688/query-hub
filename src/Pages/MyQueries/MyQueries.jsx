@@ -102,7 +102,7 @@ const MyQueries = () => {
           <div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10 md:pb-12 lg:pb-16">
               {filteredQueries.map((query) => (
-                <div key={query._id} className="card bg-base-100 shadow-xl">
+                <div key={query._id} className="card bg-base-100 shadow-2xl animate__animated animate__zoomIn">
                   <figure>
                     <img src={query.product_image} alt="Product Image" />
                   </figure>
@@ -128,7 +128,7 @@ const MyQueries = () => {
                       {query.currentDate}
                     </p>
 
-                    <div className="flex items-center gap-2 justify-between mt-4">
+                    <div className="flex md:flex-col lg:flex-row items-center gap-2 justify-between mt-4">
                       {/* View Details Button */}
                       <Link to={`/queries/${query._id}`}>
                         <button className="inline-flex items-center px-4 py-2 bg-green-600 transition ease-in-out delay-75 hover:bg-green-700 text-white text-sm font-medium rounded-md hover:-translate-y-1 hover:scale-110">
