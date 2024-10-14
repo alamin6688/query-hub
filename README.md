@@ -8,7 +8,7 @@
 
 <p><strong>🔸 Dynamic Search Functionality:</strong>   Easily search for queries based on product names, brand name & date posted; ensuring users can find relevant information quickly.</p>
 
-<p><strong>🔸 Sorting Options:</strong>   Sort queries to find the most relevant or recent entries based on user preference.</p>
+<p><strong>🔸 Sorting Options:</strong>   Sort queries to find the most relevant or recent entries based on date posted.</p>
 
 <p><strong>🔸 Explore User Queries:</strong>   Discover various queries about alternative products submitted by peoples.</p>
 
