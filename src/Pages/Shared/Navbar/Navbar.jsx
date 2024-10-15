@@ -83,8 +83,8 @@ const Navbar = () => {
               </NavLink>
             </div>
 
-            <div className="navbar-end gap-0 md:w-full">
-              <div className="navbar-end hidden lg:flex  justify-end">
+            <div className="navbar-end lg:justify-between gap-0 md:w-full">
+              <div className="navbar-end hidden lg:flex md:justify-center">
                 <ul className="menu menu-horizontal font-bold px-1 text-white">
                   {navLinks}
                 </ul>

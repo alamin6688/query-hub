@@ -8,7 +8,7 @@ const RecentQueries = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
-  const visibleQueries = 8; // Adjust the number of recent queries to show here
+  const visibleQueries = 6; // Adjust the number of recent queries to show here
 
   const getData = async () => {
     try {
