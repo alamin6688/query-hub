@@ -10,7 +10,7 @@ import {
 
 const FAQ = () => {
   return (
-    <section className="bg-white text-gray-900 mb-12">
+    <section className="bg-[#F8F8FF] text-gray-900 mb-12">
       <div className="max-w-screen-2xl px-4 py-12 mx-auto">
         <h1 className="text-2xl text-center font-extrabold lg:text-3xl text-gray-800 font-poppins">
           Frequently Asked Questions

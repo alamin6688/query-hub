@@ -41,7 +41,7 @@ const RecentQueries = () => {
   }
 
   return (
-    <section className="mb-16">
+    <section className="pt-2 md:pt-8 pb-16 bg-[#FAF9FC]">
       <div className="py-4 px-4 max-w-screen-2xl mx-auto">
         <h2 className="text-2xl text-center font-extrabold lg:text-3xl text-gray-800 pt-4 font-poppins">
           Recent Queries
@@ -52,7 +52,7 @@ const RecentQueries = () => {
           recommendations!
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-screen-2xl mx-auto animate__animated animate__zoomIn">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 px-4 max-w-screen-2xl mx-auto animate__animated animate__zoomIn">
         {queries.slice(0, visibleQueries).map((query) => (
           <div
             key={query._id}
@@ -89,7 +89,7 @@ const RecentQueries = () => {
                   <p className="text-[16px]">
                     <span className="font-bold">Query Creator: </span>
                   </p>
-                  <p className="text-xl font-semibold italic text-gray-700">
+                  <p className="text-lg font-semibold text-gray-700">
                     {query.userName}
                   </p>
                 </div>

@@ -26,7 +26,7 @@ const Navbar = () => {
       <NavLink to="/blogs" className={`p-1 px-2 md:${textColorClass}`}>
         Blogs
       </NavLink>
-      <NavLink to="/contact" className={`p-1 px-2 md:${textColorClass}`}>
+      <NavLink to="/contact" classNgitame={`p-1 px-2 md:${textColorClass}`}>
         Contact Us
       </NavLink>
     </>
