@@ -7,7 +7,7 @@ const Contact = () => {
       <Helmet>
         <title>Contact Us | Query Hub</title>
       </Helmet>
-      <div className="bg-[#FAFDFF]">
+      <div className="bg-[#FAFDFF] pt-20">
         <section className="min-h-[calc(100vh-188px)] max-w-screen-2xl mx-auto">
           <div className="px-4 md:px-6 pt-10 pb-16">
             <div className="animate__animated animate__slideInDown">

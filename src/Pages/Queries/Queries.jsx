@@ -83,12 +83,12 @@ const Queries = () => {
       <Helmet>
         <title>Queries | Query Hub</title>
       </Helmet>
-      <section className="min-h-[calc(100vh-188px)]">
+      <section className="min-h-[calc(100vh-188px)] pt-20">
         <div className="max-w-screen-2xl mx-auto">
           <h2 className="text-3xl text-center font-extrabold pt-6 font-poppins text-gray-800 capitalize mt-2">
             Queries
           </h2>
-          <p className="w-full md:w-2/3 mx-auto mt-4 text-center text-gray-900 font-poppins text-[18px] pb-4">
+          <p className="w-full md:w-2/3 mx-auto mt-4 text-center text-gray-900 font-poppins text-[18px] px-4 pb-4">
             Effortlessly manage and track all your submitted queries in one
             place. Stay organized and get the answers you need without any
             hassle.

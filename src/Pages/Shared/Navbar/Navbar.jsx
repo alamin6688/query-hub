@@ -17,16 +17,25 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <NavLink to="/" className={`p-1 px-2 md:${textColorClass}`}>
+      <NavLink to="/" className={`p-1 px-2 text-[18px] md:${textColorClass}`}>
         Home
       </NavLink>
-      <NavLink to="/queries" className={`p-1 px-2 md:${textColorClass}`}>
+      <NavLink
+        to="/queries"
+        className={`p-1 px-2 text-[18px] md:${textColorClass}`}
+      >
         Queries
       </NavLink>
-      <NavLink to="/blogs" className={`p-1 px-2 md:${textColorClass}`}>
+      <NavLink
+        to="/blogs"
+        className={`p-1 px-2 text-[18px] md:${textColorClass}`}
+      >
         Blogs
       </NavLink>
-      <NavLink to="/contact" classNgitame={`p-1 px-2 md:${textColorClass}`}>
+      <NavLink
+        to="/contact"
+        className={`p-1 px-2 text-[18px] md:${textColorClass}`}
+      >
         Contact Us
       </NavLink>
     </>
@@ -34,7 +43,7 @@ const Navbar = () => {
 
   return (
     <>
-      <section className="w-full bg-gradient-to-l from-[#1b243a] to-[#020617]">
+      <section className="w-full bg-gradient-to-l from-[#1b243a] to-[#020617]/90 fixed left-0 top-0 h-20 z-50">
         <div className="relative z-50">
           {/* Ensure the navbar spans the full width and uses container for centering */}
           <div className="navbar max-w-screen-2xl mx-auto w-full">
@@ -85,7 +94,7 @@ const Navbar = () => {
 
             <div className="navbar-end lg:justify-between gap-0 md:w-full">
               <div className="navbar-end hidden lg:flex md:justify-center">
-                <ul className="menu menu-horizontal font-bold px-1 text-white">
+                <ul className="menu menu-horizontal font-bold px-1 text-white flex items-center justify-center">
                   {navLinks}
                 </ul>
               </div>
@@ -108,7 +117,7 @@ const Navbar = () => {
                       className="btn btn-ghost btn-circle avatar"
                     >
                       <div
-                        className="w-10 rounded-full"
+                        className="w-12 rounded-full my-2"
                         title={user?.displayName || "Guest"}
                       >
                         <img

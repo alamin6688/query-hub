@@ -68,13 +68,13 @@ const MyRecommendations = () => {
       <Helmet>
         <title>My Recommendations | Query Hub</title>
       </Helmet>
-      <section className="min-h-[calc(100vh-188px)] bg-gray-100">
+      <section className="min-h-[calc(100vh-188px)] bg-gray-100 pt-20">
         <div className="max-w-screen-xl mx-auto pt-2 pb-10 px-4 sm:px-6 lg:px-8">
           <div>
             <h2 className="text-3xl text-center font-extrabold font-poppins text-gray-800 capitalize pt-12">
               Your Recommendations
             </h2>
-            <p className="w-full md:w-2/3 mx-auto mt-4 mb-6 text-center text-gray-900 font-poppins text-[18px] px-4 pb-4">
+            <p className="w-full md:w-2/3 mx-auto mt-4 mb-6 text-center text-gray-900 font-poppins text-[18px] pb-4">
               View all the recommendations you've made for various products.
               Manage or delete your suggestions to keep your recommendations
               list up-to-date.
