@@ -77,7 +77,7 @@ const Navbar = () => {
                 to="/"
                 className="md:pl-2 hover:shadow-lg duration-300 hover:scale-[1.05] transition-all"
               >
-                <div className="font-blackLetter tracking-wider w-full">
+                <div className="font-poppns tracking-wide w-full">
                   <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-xl backdrop-blur-lg py-2 text-base font-semibold transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50">
                     <span
                       className={`text-2xl md:text-3xl px-4 ${textColorClass}`}

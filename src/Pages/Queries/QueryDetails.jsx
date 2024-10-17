@@ -69,7 +69,7 @@ const QueryDetails = () => {
   };
 
   return (
-    <section className="min-h-[calc(100vh-539px)] bg-gray-100 flex items-center justify-center">
+    <section className="min-h-[calc(100vh-539px)] bg-gray-100 flex items-center justify-center pt-20">
       <div className="max-w-screen-2xl mx-auto w-full py-12 px-4">
         <h2 className="text-3xl text-center font-extrabold font-poppins text-gray-800 capitalize">
           Query Details
