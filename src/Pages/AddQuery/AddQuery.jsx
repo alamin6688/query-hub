@@ -40,6 +40,7 @@ const AddQuery = () => {
       queryDate: startDate,
       currentDate: formattedDate,
       currentTime: formattedTime,
+      recommendationCount: 0,
     };
     console.log(addQueryData);
 
